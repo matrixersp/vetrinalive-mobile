@@ -1,134 +1,87 @@
 import React from 'react';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  useColorScheme,
   View,
-} from 'react-native';
+  Center,
+  HStack,
+  Button,
+  VStack,
+  Icon,
+  Input,
+  Text,
+} from 'native-base';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import Layout from 'src/components/Layout';
+
 import Logo from 'src/assets/icons/logo.svg';
 import HeadphonesIcon from 'src/assets/icons/headphones.svg';
-import {colors, globalStyles} from 'src/styles/global';
 
-const ForgotPassword = ({navigation}) => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+const SignUp = ({navigation}) => {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            ...globalStyles.container,
-          }}>
-          <View style={styles.logoContainer}>
-            <Logo />
-          </View>
-          <View style={styles.headerContainer}>
-            <Text style={styles.title}>Forgot Password</Text>
-            <Text style={styles.description}>
-              Enter your email and you will receive an email to recover your
-              password
-            </Text>
-          </View>
-          <View style={styles.fieldsContainer}>
-            <TextInput style={globalStyles.input} placeholder="Email" />
-
-            <TouchableOpacity style={styles.buttonCta}>
-              <Text style={styles.buttonCtaText}>Login</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.signInContainer}>
-            <Text style={styles.signInText}>Do you have an account?</Text>
+    <Layout>
+      <View variant="full" style={styles.container}>
+        <Center>
+          <Logo />
+        </Center>
+        <VStack space={2} style={styles.headerContainer}>
+          <Text variant="heading" style={styles.title}>
+            Create your e-commerce
+          </Text>
+          <Text colorScheme="textSecondary" textAlign="center">
+            Enter your email and you will receive an email to recover your
+            password
+          </Text>
+        </VStack>
+        <VStack mx={4} mt={6} space={4}>
+          <Input placeholder="Email" keyboardType="email-address" />
+          <Button variant="contained" shadow={2} mt={2}>
+            Login
+          </Button>
+        </VStack>
+        <Center mt="6">
+          <HStack>
+            <Text>Do you have an account?</Text>
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('SignIn');
               }}>
-              <Text style={styles.signInLink}>Sign in now</Text>
+              <Text ml={1} colorScheme="primary">
+                Sign in now
+              </Text>
             </TouchableOpacity>
-          </View>
-          <TouchableOpacity style={styles.buttonSupport}>
-            <HeadphonesIcon />
-            <Text style={styles.buttonSupportText}>Support</Text>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+          </HStack>
+        </Center>
+        <HStack justifyContent="center" mt="8">
+          <Button
+            variant="outlined"
+            colorScheme="secondary"
+            rounded="full"
+            px={6}
+            shadow={2}
+            _icon={{marginRight: 1}}
+            leftIcon={<Icon as={HeadphonesIcon} size="1" />}>
+            Support
+          </Button>
+        </HStack>
+      </View>
+    </Layout>
   );
 };
 
 const styles = StyleSheet.create({
-  logoContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+  container: {
+    paddingVertical: 62,
+    backgroundColor: 'white',
   },
   headerContainer: {
-    marginHorizontal: 62,
+    alignItems: 'center',
+    marginHorizontal: 16,
     marginTop: 32,
-    marginBottom: 16,
-  },
-  fieldsContainer: {
-    marginHorizontal: 44,
   },
   title: {
-    ...globalStyles.heading,
-    textAlign: 'center',
-    marginBottom: 8,
-  },
-  description: {
-    textAlign: 'center',
-    ...globalStyles.paragraph,
-  },
-  buttonCta: {
-    ...globalStyles.button,
-    marginTop: 16,
-    backgroundColor: colors.primary,
-  },
-  buttonCtaText: {
-    ...globalStyles.buttonText,
-    color: colors.white,
-  },
-  signInContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 24,
-  },
-  signInText: {
-    color: colors.textPrimary,
-  },
-  signInLink: {
-    color: colors.primary,
-    marginLeft: 4,
-  },
-  buttonSupport: {
-    ...globalStyles.button,
-    alignSelf: 'center',
-    marginTop: 32,
-    borderColor: colors.secondary,
-    borderRadius: 50,
-    borderWidth: 1,
-  },
-  buttonSupportText: {
-    ...globalStyles.buttonText,
-    marginLeft: 10,
+    fontFamily: 'NotoSans',
+    fontWeight: '500',
   },
 });
 
-export default ForgotPassword;
+export default SignUp;
