@@ -11,13 +11,16 @@ export const customTheme = extendTheme({
     textSecondary: '#546679',
     divider: '#6C7C8C',
     white: '#FFFFFF',
+    error: '#F33451',
+    background: '#F8F9FB',
   },
   components: {
     View: {
       variants: {
-        full: {
+        full: ({colorScheme}: any) => ({
+          backgroundColor: colorScheme,
           minHeight: screenHeight,
-        },
+        }),
       },
     },
     Text: {
@@ -110,7 +113,7 @@ export const customTheme = extendTheme({
         size: 'md',
       },
       variants: {
-        outlined: ({colorScheme}) => ({
+        outlined: ({colorScheme}: any) => ({
           borderWidth: 1,
           _focus: {
             borderColor: colorScheme,

@@ -6,6 +6,8 @@ import React from 'react';
 import ForgotPassword from 'src/screens/ForgotPassword';
 import SignIn from 'src/screens/SignIn';
 import SignUp from 'src/screens/SignUp';
+import {HeaderTitle} from './components/HeaderTitle';
+import Dashboard from './screens/Dashboard';
 
 const defaultOptions = {
   headerShown: false,
@@ -24,6 +26,18 @@ const App = () => {
     <NativeBaseProvider theme={customTheme} config={config}>
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            name="Dashboard"
+            component={Dashboard}
+            options={{
+              headerTitle: () => <HeaderTitle title="Dashboard" />,
+              // headerLeft: () => (
+              //   <TouchableOpacity onPress={() => alert('Pressed')}>
+              //     <MenuIcon marginRight={16} />
+              //   </TouchableOpacity>
+              // ),
+            }}
+          />
           <Stack.Screen
             name="SignUp"
             component={SignUp}
