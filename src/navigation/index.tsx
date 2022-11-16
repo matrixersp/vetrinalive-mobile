@@ -7,36 +7,16 @@ import SignIn from 'src/screens/SignIn';
 import SignUp from 'src/screens/SignUp';
 import DrawerNavigation from 'src/navigation/DrawerNavigation';
 
-const defaultOptions = {
-  headerShown: false,
-};
-
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={DrawerNavigation}
-          options={defaultOptions}
-        />
-        <Stack.Screen
-          name="SignUp"
-          component={SignUp}
-          options={defaultOptions}
-        />
-        <Stack.Screen
-          name="SignIn"
-          component={SignIn}
-          options={defaultOptions}
-        />
-        <Stack.Screen
-          name="ForgotPassword"
-          component={ForgotPassword}
-          options={defaultOptions}
-        />
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Home" component={DrawerNavigation} />
+        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
       </Stack.Navigator>
     </NavigationContainer>
   );

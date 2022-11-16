@@ -1,12 +1,12 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Dashboard from 'src/screens/Dashboard';
+import Products from 'src/screens/Products';
 import {HeaderTitle} from 'src/components/HeaderTitle';
 import {TouchableOpacity} from 'react-native';
 import {Icon} from 'native-base';
 
 import MenuIcon from 'src/assets/icons/menu.svg';
-import Products from 'src/Products';
 
 const Drawer = createDrawerNavigator();
 
