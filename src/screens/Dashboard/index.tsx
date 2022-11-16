@@ -220,7 +220,8 @@ const Dashboard = ({navigation}) => {
                   bg="gray.500"
                   alignSelf="center"
                   size="40px"
-                  source={require('src/assets/images/support-agent.jpg')}></Avatar>
+                  source={require('src/assets/images/support-agent.jpg')}
+                />
                 <Text fontSize={20}>Simone is here to help you</Text>
               </HStack>
               <Button variant="contained" alignSelf="center" px={4}>

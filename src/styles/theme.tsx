@@ -121,6 +121,11 @@ export const customTheme = extendTheme({
         }),
       },
     },
+    Divider: {
+      baseStyle: {
+        backgroundColor: '#E7E9EC',
+      },
+    },
     Headers: {
       baseStyle: {
         backgroundColor: '#21B8F9',
