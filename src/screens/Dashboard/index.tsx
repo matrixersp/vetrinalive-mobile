@@ -8,18 +8,28 @@ import {
   HStack,
   Center,
   ScrollView,
+  Divider,
+  Avatar,
+  Button,
 } from 'native-base';
 import Layout from 'src/components/Layout';
-import Card from 'src/components/Card';
-import Select from 'src/components/Select';
+import Select from 'src/screens/Dashboard/Select';
+import Card from 'src/screens/Dashboard/Card';
 import NewsCard from 'src/screens/Dashboard/NewsCard';
+import Extension from 'src/screens/Dashboard/Extension';
 
 import ExternalLinkIcon from 'src/assets/icons/external-link.svg';
 import ToolIcon from 'src/assets/icons/tool.svg';
 import EyeIcon from 'src/assets/icons/eye.svg';
 import ListIcon from 'src/assets/icons/list.svg';
 import FileTextIcon from 'src/assets/icons/file-text.svg';
+import ExtensionsIcon from 'src/assets/icons/extensions.svg';
 import DomainIcon from 'src/assets/icons/domain.svg';
+import CapterraIcon from 'src/assets/icons/capterra.svg';
+import TrustpilotIcon from 'src/assets/icons/trustpilot.svg';
+import ArrowRightIcon from 'src/assets/icons/arrow-right.svg';
+import HeadphonesIcon from 'src/assets/icons/headphones.svg';
+import UsersIcon from 'src/assets/icons/users.svg';
 
 const Dashboard = ({navigation}) => {
   return (
@@ -63,6 +73,7 @@ const Dashboard = ({navigation}) => {
               </Text>
             </Center>
           </Card>
+
           <Card
             icon={EyeIcon}
             title="Visitors"
@@ -82,6 +93,7 @@ const Dashboard = ({navigation}) => {
               </Text>
             </Center>
           </Card>
+
           <Card
             icon={ListIcon}
             title="Orders"
@@ -114,9 +126,10 @@ const Dashboard = ({navigation}) => {
               </HStack>
             </VStack>
           </Card>
+
           <Card icon={FileTextIcon} title="Latest News">
-            {[...Array(3).keys()].map(() => (
-              <NewsCard />
+            {[...Array(3).keys()].map(item => (
+              <NewsCard key={item} />
             ))}
             <TouchableOpacity>
               <HStack justifyContent="center">
@@ -127,35 +140,19 @@ const Dashboard = ({navigation}) => {
               </HStack>
             </TouchableOpacity>
           </Card>
+
           <Card
-            icon={FileTextIcon}
+            icon={ExtensionsIcon}
             title="Extensions Marketplace"
             navigation={navigation}
             screen="Extensions"
             linkText="Discover all extensions">
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              <VStack space={2}>
-                <Center
-                  bg="#FFA26B"
-                  borderRadius={8}
-                  shadow={2}
-                  mr={4}
-                  p={4}
-                  h={160}
-                  w={160}>
+              <HStack space={4}>
+                <Extension title="Custom Domain" bg="#FFA26B">
                   <Icon as={DomainIcon} />
-                </Center>
-                <Text>Custom Domain</Text>
-              </VStack>
-              <VStack space={2}>
-                <Center
-                  bg="#00C48C"
-                  borderRadius={8}
-                  shadow={2}
-                  mr={4}
-                  p={4}
-                  h={160}
-                  w={160}>
+                </Extension>
+                <Extension title="+50 Products" bg="#00C48C">
                   <Text
                     colorScheme="white"
                     fontSize={36}
@@ -166,10 +163,84 @@ const Dashboard = ({navigation}) => {
                   <Text colorScheme="white" fontSize={22} fontWeight={500}>
                     Prodotti
                   </Text>
-                </Center>
-                <Text>+50 Products</Text>
-              </VStack>
+                </Extension>
+              </HStack>
             </ScrollView>
+          </Card>
+
+          <VStack bg="#103B66" borderRadius={10} p={6}>
+            <VStack space={4}>
+              <Icon as={CapterraIcon} />
+              <Text colorScheme="white">
+                Write a{' '}
+                <Text color="secondary" fontWeight={700}>
+                  positive
+                </Text>{' '}
+                review on Capterra and receive the extension with{' '}
+                <Text fontWeight={700}>50 additional products.</Text>
+              </Text>
+              <TouchableOpacity onPress={() => navigation.navigate('Capterra')}>
+                <HStack>
+                  <Text colorScheme="secondary" style={styles.linkText}>
+                    Write a review on Capterra
+                  </Text>
+                  <Icon as={ArrowRightIcon} ml={4} color="secondary" />
+                </HStack>
+              </TouchableOpacity>
+            </VStack>
+            <Divider thickness={2} my={6} />
+            <VStack space={4}>
+              <Icon as={TrustpilotIcon} />
+              <Text colorScheme="white">
+                Show us your love by leaving a{' '}
+                <Text color="secondary" fontWeight={700}>
+                  positive
+                </Text>{' '}
+                review on trust pilot and receive the extension of{' '}
+                <Text fontWeight={700}>50 additional products.</Text>
+              </Text>
+              <TouchableOpacity onPress={() => navigation.navigate('Capterra')}>
+                <HStack>
+                  <Text colorScheme="secondary" style={styles.linkText}>
+                    Write a review on Capterra
+                  </Text>
+                  <Icon as={ArrowRightIcon} ml={4} color="secondary" />
+                </HStack>
+              </TouchableOpacity>
+            </VStack>
+            <Text colorScheme="white" mt={6} fontSize={12}>
+              * The two promotions are cumulative
+            </Text>
+          </VStack>
+
+          <Card icon={HeadphonesIcon} title="Customer support">
+            <VStack space={6}>
+              <HStack space={4} alignItems="center">
+                <Avatar
+                  bg="gray.500"
+                  alignSelf="center"
+                  size="40px"
+                  source={require('src/assets/images/support-agent.jpg')}></Avatar>
+                <Text fontSize={20}>Simone is here to help you</Text>
+              </HStack>
+              <Button variant="contained" alignSelf="center" px={4}>
+                Contact us
+              </Button>
+            </VStack>
+          </Card>
+          <Card
+            icon={UsersIcon}
+            title="Invite a friend!"
+            navigation={navigation}
+            screen="invite"
+            linkText="Start inviting friends!">
+            <Text>
+              <Text color="secondary" fontWeight={700}>
+                Receive 50 products
+              </Text>{' '}
+              by inviting a friend who subscribes to a plan. Your friend will
+              receive a 30% discount coupon valid for any plan.
+            </Text>
           </Card>
         </VStack>
       </View>

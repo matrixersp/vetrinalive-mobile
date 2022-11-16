@@ -28,9 +28,9 @@ const Card = ({
   return (
     <VStack shadow={2} space={6} style={{...styles.card, ...style}}>
       <HStack alignItems="center" justifyContent="space-between">
-        <HStack>
+        <HStack alignItems="center">
           <Icon as={icon} />
-          <Text ml={6} fontSize={22} fontWeight={600}>
+          <Text ml={6} style={styles.title}>
             {title}
           </Text>
         </HStack>
@@ -43,7 +43,7 @@ const Card = ({
             <Text colorScheme="primary" style={styles.linkText}>
               {linkText}
             </Text>
-            <Icon as={ArrowRightIcon} ml={4} />
+            <Icon as={ArrowRightIcon} ml={4} color="primary" />
           </HStack>
         </TouchableOpacity>
       )}
@@ -56,6 +56,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 24,
     borderRadius: 10,
+  },
+  title: {
+    fontSize: 22,
+    lineHeight: 27,
+    fontWeight: '600',
   },
   linkText: {
     textDecorationLine: 'underline',
