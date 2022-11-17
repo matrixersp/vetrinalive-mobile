@@ -16,7 +16,8 @@ import MenuIcon from 'src/assets/icons/menu.svg';
 import SearchIcon from 'src/assets/icons/search.svg';
 import FilterIcon from 'src/assets/icons/filter.svg';
 import NewProduct from 'src/screens/Products/NewProduct';
-import Payment from '../screens/Payment';
+import Payment from 'src/screens/Payment';
+import Orders from 'src/screens/Orders';
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
@@ -64,6 +65,23 @@ const DrawerNavigation = ({}: Props) => {
         component={Payment}
         options={{
           headerTitle: () => <HeaderTitle title="Products" />,
+          headerRight: () => (
+            <HStack mr={4} space={8}>
+              <Pressable onPress={() => console.log('Search')}>
+                <SearchIcon />
+              </Pressable>
+              <Pressable onPress={() => console.log('filter')}>
+                <FilterIcon />
+              </Pressable>
+            </HStack>
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Orders"
+        component={Orders}
+        options={{
+          headerTitle: () => <HeaderTitle title="Orders" />,
           headerRight: () => (
             <HStack mr={4} space={8}>
               <Pressable onPress={() => console.log('Search')}>

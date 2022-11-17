@@ -13,6 +13,7 @@ export const customTheme = extendTheme({
     white: '#FFFFFF',
     error: '#F33451',
     background: '#F8F9FB',
+    disabled: '#B6BEC6',
   },
   components: {
     View: {
@@ -54,6 +55,16 @@ export const customTheme = extendTheme({
         _icon: {
           marginRight: 14,
         },
+        // isDisabled: {
+        //   style: {
+        //     backgroundColor: '#07E9EC',
+        //   },
+        // },
+        // disabled: {
+        //   style: {
+        //     backgroundColor: '#07E9EC',
+        //   },
+        // },
       },
       defaultProps: {
         variant: 'text',
@@ -79,6 +90,13 @@ export const customTheme = extendTheme({
           _pressed: {
             opacity: 0.8,
             shadow: 0,
+          },
+          _disabled: {
+            opacity: 1,
+            backgroundColor: '#E7E9EC',
+            _text: {
+              color: 'disabled',
+            },
           },
         }),
       },
