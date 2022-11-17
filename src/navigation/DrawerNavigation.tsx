@@ -1,11 +1,16 @@
 import React from 'react';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import {
+  createDrawerNavigator,
+  DrawerContentScrollView,
+  DrawerItemList,
+  DrawerItem,
+} from '@react-navigation/drawer';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Dashboard from 'src/screens/Dashboard';
 import Products from 'src/screens/Products';
 import {HeaderTitle} from 'src/components/HeaderTitle';
 import {TouchableOpacity} from 'react-native';
-import {HStack, Icon, Pressable} from 'native-base';
+import {Divider, HStack, Icon, Pressable} from 'native-base';
 
 import MenuIcon from 'src/assets/icons/menu.svg';
 import SearchIcon from 'src/assets/icons/search.svg';
@@ -28,7 +33,8 @@ const DrawerNavigation = ({}: Props) => {
             <Icon as={MenuIcon} marginLeft={4} />
           </TouchableOpacity>
         ),
-      })}>
+      })}
+      drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen
         name="Dashboard"
         component={Dashboard}
@@ -73,6 +79,21 @@ const DrawerNavigation = ({}: Props) => {
     </Drawer.Navigator>
   );
 };
+
+function CustomDrawerContent(props) {
+  const {navigation} = props;
+
+  return (
+    <DrawerContentScrollView {...props}>
+      <DrawerItemList {...props} />
+      <Divider />
+      <DrawerItem
+        label="Logout"
+        onPress={() => navigation.navigate('SignIn')}
+      />
+    </DrawerContentScrollView>
+  );
+}
 
 const ProductsNavigation = () => {
   return (

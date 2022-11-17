@@ -37,7 +37,11 @@ const SignIn = ({navigation}) => {
         <VStack mx={4} mt={6} space={4}>
           <Input placeholder="Email" keyboardType="email-address" />
           <Input placeholder="Password" secureTextEntry />
-          <Button variant="contained" shadow={2} mt={2}>
+          <Button
+            variant="contained"
+            shadow={2}
+            mt={2}
+            onPress={() => navigation.navigate('Dashboard')}>
             Login
           </Button>
           <CustomDivider text="OR" mt={2} mx={3} />
