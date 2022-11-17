@@ -107,7 +107,7 @@ const Dashboard = ({navigation}) => {
                 }}
               />
             }>
-            <VStack>
+            <VStack space={2}>
               <HStack justifyContent="space-between">
                 <Text fontSize={20} colorScheme="textSecondary">
                   Orders received:

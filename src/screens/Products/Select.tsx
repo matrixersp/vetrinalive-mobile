@@ -1,48 +1,30 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
-import {Menu, HStack, ChevronDownIcon, Pressable, Text} from 'native-base';
+import {Box, Select, CheckIcon, HStack} from 'native-base';
 
 type Props = {
-  options: number[];
+  options: Record<string, any>[];
 };
 
-const Select = ({options}: Props) => {
-  const [option, setOption] = React.useState(options[0]);
+const CustomSelect = ({options}: Props) => {
+  const [option, setOption] = React.useState('');
+
   return (
-    <Menu
-      w="190"
-      trigger={triggerProps => {
-        return (
-          <Pressable accessibilityLabel="More options menu" {...triggerProps}>
-            <HStack alignItems="center">
-              <Text style={styles.selectedValue} colorScheme="textSecondary">
-                {option}
-              </Text>
-              <ChevronDownIcon />
-            </HStack>
-          </Pressable>
-        );
-      }}>
-      {options.map(value => (
-        <Menu.Item
-          key={value}
-          onPress={() => {
-            setOption(value);
-          }}>
-          <Text>{value}</Text>
-        </Menu.Item>
+    <Select
+      selectedValue={option}
+      minWidth="100%"
+      accessibilityLabel="Select category"
+      placeholder="Select category"
+      _selectedItem={{
+        bg: 'teal.600',
+        endIcon: <CheckIcon size="5" />,
+      }}
+      mt={1}
+      onValueChange={itemValue => setOption(itemValue)}>
+      {options.map(({label, value}) => (
+        <Select.Item key={value} label={label} value={value} />
       ))}
-    </Menu>
+    </Select>
   );
 };
 
-const styles = StyleSheet.create({
-  selectedValue: {
-    fontSize: 10,
-    lineHeight: 18,
-    marginRight: 10,
-    fontWeight: '600',
-  },
-});
-
-export default Select;
+export default CustomSelect;

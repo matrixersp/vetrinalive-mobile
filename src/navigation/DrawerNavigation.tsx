@@ -1,5 +1,6 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Dashboard from 'src/screens/Dashboard';
 import Products from 'src/screens/Products';
 import {HeaderTitle} from 'src/components/HeaderTitle';
@@ -9,8 +10,10 @@ import {HStack, Icon, Pressable} from 'native-base';
 import MenuIcon from 'src/assets/icons/menu.svg';
 import SearchIcon from 'src/assets/icons/search.svg';
 import FilterIcon from 'src/assets/icons/filter.svg';
+import NewProduct from 'src/screens/Products/NewProduct';
 
 const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
 
 type Props = {};
 
@@ -34,7 +37,7 @@ const DrawerNavigation = ({}: Props) => {
       />
       <Drawer.Screen
         name="Products"
-        component={Products}
+        component={ProductsNavigation}
         options={{
           headerTitle: () => <HeaderTitle title="Products" />,
           headerRight: () => (
@@ -50,6 +53,17 @@ const DrawerNavigation = ({}: Props) => {
         }}
       />
     </Drawer.Navigator>
+  );
+};
+
+const ProductsNavigation = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{headerShown: false}}
+      initialRouteName="AllProducts">
+      <Stack.Screen name="AllProducts" component={Products} />
+      <Stack.Screen name="NewProduct" component={NewProduct} />
+    </Stack.Navigator>
   );
 };
 

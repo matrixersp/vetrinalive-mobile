@@ -107,6 +107,10 @@ export const customTheme = extendTheme({
         _focus: {
           borderColor: 'primary',
         },
+        _disabled: {
+          backgroundColor: '#E7E9EC',
+          opacity: 1,
+        },
       },
       defaultProps: {
         variant: 'outlined',
@@ -119,6 +123,14 @@ export const customTheme = extendTheme({
             borderColor: colorScheme,
           },
         }),
+      },
+      sizes: {
+        sm: {
+          paddingLeft: '12px',
+          paddingRight: '12px',
+          height: 44,
+          borderRadius: 6,
+        },
       },
     },
     Divider: {

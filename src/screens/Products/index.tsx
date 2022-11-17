@@ -14,14 +14,14 @@ import {
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import Layout from 'src/components/Layout';
-import Select from 'src/screens/Products/Select';
+import Menu from 'src/screens/Products/Menu';
 
 import PlusIcon from 'src/assets/icons/plus.svg';
 import MoreHorizontalIcon from 'src/assets/icons/more-horizontal.svg';
 import ChevronLeftIcon from 'src/assets/icons/chevron-left.svg';
 import ChevronRightIcon from 'src/assets/icons/chevron-right.svg';
 
-const Products = () => {
+const Products = ({navigation}) => {
   return (
     <Layout>
       <View variant="full" p={4} colorScheme="background">
@@ -32,7 +32,9 @@ const Products = () => {
             <Switch size="md" />
           </VStack>
           <VStack justifyContent="center">
-            <Button variant="contained">
+            <Button
+              variant="contained"
+              onPress={() => navigation.navigate('NewProduct')}>
               <PlusIcon />
             </Button>
           </VStack>
@@ -77,7 +79,7 @@ const Products = () => {
           <HStack px={8} py={4} justifyContent="space-between">
             <HStack space={2} alignItems="center">
               <Text style={styles.paginationText}>P</Text>
-              <Select options={[5, 10, 25]} />
+              <Menu options={[5, 10, 25]} />
             </HStack>
             <HStack alignItems="center">
               <Text style={styles.paginationText}>1-25 of 25</Text>
