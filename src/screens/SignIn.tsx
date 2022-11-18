@@ -41,7 +41,7 @@ const SignIn = ({navigation}) => {
             variant="contained"
             shadow={2}
             mt={2}
-            onPress={() => navigation.navigate('Dashboard')}>
+            onPress={() => navigation.navigate('Home')}>
             Login
           </Button>
           <CustomDivider text="OR" mt={2} mx={3} />
