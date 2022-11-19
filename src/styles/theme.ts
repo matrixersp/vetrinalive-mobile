@@ -55,16 +55,6 @@ export const customTheme = extendTheme({
         _icon: {
           marginRight: 14,
         },
-        // isDisabled: {
-        //   style: {
-        //     backgroundColor: '#07E9EC',
-        //   },
-        // },
-        // disabled: {
-        //   style: {
-        //     backgroundColor: '#07E9EC',
-        //   },
-        // },
       },
       defaultProps: {
         variant: 'text',

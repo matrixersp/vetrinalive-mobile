@@ -2,7 +2,7 @@ import React from 'react';
 import {TouchableOpacity, StyleSheet} from 'react-native';
 import {VStack, HStack, Text, Icon} from 'native-base';
 
-import ArrowRightIcon from 'src/assets/icons/arrow-right.svg';
+import ArrowRightIcon from 'assets/icons/arrow-right.svg';
 
 type Props = {
   icon: React.ReactNode;

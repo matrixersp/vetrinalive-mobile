@@ -6,7 +6,7 @@ const NewsCard = () => {
   return (
     <HStack shadow={3} space={2} style={styles.container}>
       <Image
-        source={require('src/assets/images/news-image-1.jpg')}
+        source={require('assets/images/news-image-1.jpg')}
         alt="Alternate Text"
         width="90px"
         height="full"

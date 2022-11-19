@@ -12,24 +12,24 @@ import {
   Avatar,
   Button,
 } from 'native-base';
-import Layout from 'src/components/Layout';
-import Select from 'src/screens/Dashboard/Select';
-import Card from 'src/screens/Dashboard/Card';
-import NewsCard from 'src/screens/Dashboard/NewsCard';
-import Extension from 'src/screens/Dashboard/Extension';
+import Layout from 'components/Layout';
+import Select from 'screens/Dashboard/Select';
+import Card from 'screens/Dashboard/Card';
+import NewsCard from 'screens/Dashboard/NewsCard';
+import Extension from 'screens/Dashboard/Extension';
 
-import ExternalLinkIcon from 'src/assets/icons/external-link.svg';
-import ToolIcon from 'src/assets/icons/tool.svg';
-import EyeIcon from 'src/assets/icons/eye.svg';
-import ListIcon from 'src/assets/icons/list.svg';
-import FileTextIcon from 'src/assets/icons/file-text.svg';
-import ExtensionsIcon from 'src/assets/icons/extensions.svg';
-import DomainIcon from 'src/assets/icons/domain.svg';
-import CapterraIcon from 'src/assets/icons/capterra.svg';
-import TrustpilotIcon from 'src/assets/icons/trustpilot.svg';
-import ArrowRightIcon from 'src/assets/icons/arrow-right.svg';
-import HeadphonesIcon from 'src/assets/icons/headphones.svg';
-import UsersIcon from 'src/assets/icons/users.svg';
+import ExternalLinkIcon from 'assets/icons/external-link.svg';
+import ToolIcon from 'assets/icons/tool.svg';
+import EyeIcon from 'assets/icons/eye.svg';
+import ListIcon from 'assets/icons/list.svg';
+import FileTextIcon from 'assets/icons/file-text.svg';
+import ExtensionsIcon from 'assets/icons/extensions.svg';
+import DomainIcon from 'assets/icons/domain.svg';
+import CapterraIcon from 'assets/icons/capterra.svg';
+import TrustpilotIcon from 'assets/icons/trustpilot.svg';
+import ArrowRightIcon from 'assets/icons/arrow-right.svg';
+import HeadphonesIcon from 'assets/icons/headphones.svg';
+import UsersIcon from 'assets/icons/users.svg';
 
 const Dashboard = ({navigation}) => {
   return (
@@ -220,7 +220,7 @@ const Dashboard = ({navigation}) => {
                   bg="gray.500"
                   alignSelf="center"
                   size="40px"
-                  source={require('src/assets/images/support-agent.jpg')}
+                  source={require('assets/images/support-agent.jpg')}
                 />
                 <Text fontSize={20}>Simone is here to help you</Text>
               </HStack>

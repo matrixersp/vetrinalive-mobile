@@ -1,8 +1,9 @@
 import 'react-native-gesture-handler';
 import {NativeBaseProvider} from 'native-base';
-import {customTheme} from 'src/styles/theme';
 import React from 'react';
-import Navigation from 'src/navigation';
+
+import {customTheme} from 'styles/theme';
+import Navigation from 'navigation';
 
 const config = {
   dependencies: {

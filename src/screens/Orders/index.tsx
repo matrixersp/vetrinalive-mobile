@@ -12,15 +12,15 @@ import {
 } from 'native-base';
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import Layout from 'src/components/Layout';
-import Menu from 'src/screens/Orders/Menu';
+import Layout from 'components/Layout';
+import Menu from 'screens/Orders/Menu';
 
-import MoreHorizontalIcon from 'src/assets/icons/more-horizontal.svg';
-import ChevronLeftIcon from 'src/assets/icons/chevron-left.svg';
-import ChevronRightIcon from 'src/assets/icons/chevron-right.svg';
-import ExternalLinkIcon from 'src/assets/icons/external-link.svg';
-import ChevronDownIcon from 'src/assets/icons/chevron-down-small.svg';
-import ChevronUpIcon from 'src/assets/icons/chevron-up-small.svg';
+import MoreHorizontalIcon from 'assets/icons/more-horizontal.svg';
+import ChevronLeftIcon from 'assets/icons/chevron-left.svg';
+import ChevronRightIcon from 'assets/icons/chevron-right.svg';
+import ExternalLinkIcon from 'assets/icons/external-link.svg';
+import ChevronDownIcon from 'assets/icons/chevron-down-small.svg';
+import ChevronUpIcon from 'assets/icons/chevron-up-small.svg';
 
 const Orders = ({navigation}) => {
   return (
