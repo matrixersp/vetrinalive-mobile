@@ -6,18 +6,18 @@ import {
   DrawerItem,
 } from '@react-navigation/drawer';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Dashboard from 'src/screens/Dashboard';
-import Products from 'src/screens/Products';
-import {HeaderTitle} from 'src/components/HeaderTitle';
+import Dashboard from 'screens/Dashboard';
+import Products from 'screens/Products';
+import {HeaderTitle} from 'components/HeaderTitle';
 import {TouchableOpacity} from 'react-native';
 import {Divider, HStack, Icon, Pressable} from 'native-base';
 
-import MenuIcon from 'src/assets/icons/menu.svg';
-import SearchIcon from 'src/assets/icons/search.svg';
-import FilterIcon from 'src/assets/icons/filter.svg';
-import NewProduct from 'src/screens/Products/NewProduct';
-import Payment from 'src/screens/Payment';
-import Orders from 'src/screens/Orders';
+import MenuIcon from 'assets/icons/menu.svg';
+import SearchIcon from 'assets/icons/search.svg';
+import FilterIcon from 'assets/icons/filter.svg';
+import NewProduct from 'screens/Products/NewProduct';
+import Payment from 'screens/Payment';
+import Orders from 'screens/Orders';
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();

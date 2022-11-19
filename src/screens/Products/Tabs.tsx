@@ -2,7 +2,7 @@ import {Text, View, Pressable, VStack} from 'native-base';
 import React from 'react';
 import {useWindowDimensions, StyleSheet} from 'react-native';
 import {TabView, SceneMap} from 'react-native-tab-view';
-import InfoRoute from 'src/screens/Products/Info';
+import InfoRoute from 'screens/Products/Info';
 
 const VariantsRoute = () => <View />;
 

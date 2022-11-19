@@ -1,16 +1,16 @@
 import {Text, View, VStack} from 'native-base';
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import Layout from 'src/components/Layout';
-import Card from 'src/screens/Payment/Card';
+import Layout from 'components/Layout';
+import Card from 'screens/Payment/Card';
 
-import CashIcon from 'src/assets/icons/cash.svg';
-import WireTransferIcon from 'src/assets/icons/wire-transfer.svg';
-import StripeIcon from 'src/assets/icons/stripe.svg';
-import PaypalIcon from 'src/assets/icons/paypal.svg';
-import RazorpayIcon from 'src/assets/icons/razorpay.svg';
-import AliPayIcon from 'src/assets/icons/alipay.svg';
-import PaystackIcon from 'src/assets/icons/paystack.svg';
+import CashIcon from 'assets/icons/cash.svg';
+import WireTransferIcon from 'assets/icons/wire-transfer.svg';
+import StripeIcon from 'assets/icons/stripe.svg';
+import PaypalIcon from 'assets/icons/paypal.svg';
+import RazorpayIcon from 'assets/icons/razorpay.svg';
+import AliPayIcon from 'assets/icons/alipay.svg';
+import PaystackIcon from 'assets/icons/paystack.svg';
 
 const Payment = () => {
   return (

@@ -2,10 +2,10 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 
-import ForgotPassword from 'src/screens/ForgotPassword';
-import SignIn from 'src/screens/SignIn';
-import SignUp from 'src/screens/SignUp';
-import DrawerNavigation from 'src/navigation/DrawerNavigation';
+import ForgotPassword from 'screens/ForgotPassword';
+import SignIn from 'screens/SignIn';
+import SignUp from 'screens/SignUp';
+import DrawerNavigation from 'navigation/DrawerNavigation';
 
 const Stack = createNativeStackNavigator();
 

@@ -13,15 +13,17 @@ import {
 } from 'native-base';
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import Layout from 'src/components/Layout';
-import Menu from 'src/screens/Products/Menu';
+import {DrawerNavigationProp} from '@react-navigation/drawer';
 
-import PlusIcon from 'src/assets/icons/plus.svg';
-import MoreHorizontalIcon from 'src/assets/icons/more-horizontal.svg';
-import ChevronLeftIcon from 'src/assets/icons/chevron-left.svg';
-import ChevronRightIcon from 'src/assets/icons/chevron-right.svg';
+import Layout from 'components/Layout';
+import Menu from 'screens/Products/Menu';
 
-const Products = ({navigation}) => {
+import PlusIcon from 'assets/icons/plus.svg';
+import MoreHorizontalIcon from 'assets/icons/more-horizontal.svg';
+import ChevronLeftIcon from 'assets/icons/chevron-left.svg';
+import ChevronRightIcon from 'assets/icons/chevron-right.svg';
+
+const Products = ({navigation}: {navigation: DrawerNavigationProp<any>}) => {
   return (
     <Layout>
       <View variant="full" p={4} colorScheme="background">
@@ -60,7 +62,7 @@ const Products = ({navigation}) => {
                   bg="gray.500"
                   alignSelf="center"
                   size={8}
-                  source={require('src/assets/images/t-shirt.jpg')}
+                  source={require('assets/images/t-shirt.jpg')}
                 />
                 <Text style={styles.columnText} ml={3}>
                   {title}

@@ -11,12 +11,12 @@ import {
   Text,
 } from 'native-base';
 
-import Layout from 'src/components/Layout';
+import Layout from 'components/Layout';
 
-import Logo from 'src/assets/icons/logo.svg';
-import HeadphonesIcon from 'src/assets/icons/headphones.svg';
+import Logo from 'assets/icons/logo.svg';
+import HeadphonesIcon from 'assets/icons/headphones.svg';
 
-const SignUp = ({navigation}) => {
+const ForgotPassword = ({navigation}) => {
   return (
     <Layout>
       <View variant="full" style={styles.container}>
@@ -84,4 +84,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignUp;
+export default ForgotPassword;

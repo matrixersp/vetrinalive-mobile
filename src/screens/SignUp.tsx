@@ -11,13 +11,13 @@ import {
   Text,
 } from 'native-base';
 
-import CustomDivider from 'src/components/Divider';
-import Layout from 'src/components/Layout';
+import CustomDivider from 'components/Divider';
+import Layout from 'components/Layout';
 
-import Logo from 'src/assets/icons/logo.svg';
-import FacebookIcon from 'src/assets/icons/facebook.svg';
-import GoogleIcon from 'src/assets/icons/google.svg';
-import HeadphonesIcon from 'src/assets/icons/headphones.svg';
+import Logo from 'assets/icons/logo.svg';
+import FacebookIcon from 'assets/icons/facebook.svg';
+import GoogleIcon from 'assets/icons/google.svg';
+import HeadphonesIcon from 'assets/icons/headphones.svg';
 
 const SignUp = ({navigation}) => {
   return (

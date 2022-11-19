@@ -1,14 +1,15 @@
 import {Checkbox, HStack, Icon, Input, Radio, Text, VStack} from 'native-base';
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import CustomSelect from 'src/screens/Products/Select';
 import {ScrollView} from 'react-native-gesture-handler';
 import {actions, RichEditor, RichToolbar} from 'react-native-pell-rich-editor';
 
-import CurrencyIcon from 'src/assets/icons/currency.svg';
-import WeightIcon from 'src/assets/icons/weight.svg';
-import AvailabilityIcon from 'src/assets/icons/availability.svg';
-import InfoIcon from 'src/assets/icons/info.svg';
+import CustomSelect from 'screens/Products/Select';
+
+import CurrencyIcon from 'assets/icons/currency.svg';
+import WeightIcon from 'assets/icons/weight.svg';
+import AvailabilityIcon from 'assets/icons/availability.svg';
+import InfoIcon from 'assets/icons/info.svg';
 
 const Info = () => {
   const richText = React.useRef<RichEditor>(null);

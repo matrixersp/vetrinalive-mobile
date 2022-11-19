@@ -1,8 +1,8 @@
 import {Button, ChevronLeftIcon, Text, View, VStack} from 'native-base';
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import Layout from 'src/components/Layout';
-import Tabs from 'src/screens/Products/Tabs.tsx';
+import Layout from 'components/Layout';
+import Tabs from 'screens/Products/Tabs';
 
 type Props = {};
 
