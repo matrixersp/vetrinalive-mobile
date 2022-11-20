@@ -83,7 +83,7 @@ const OrdersTable = () => {
             </Text>
           </HStack>
           <HStack style={styles.cell} w={width.name}>
-            <Text style={styles.columnText} numberOfLines={1}>
+            <Text style={styles.columnText} numberOfLines={2}>
               {name}
             </Text>
           </HStack>
@@ -95,7 +95,6 @@ const OrdersTable = () => {
                 {backgroundColor: getStatusBackground(status)},
               ]}
               noOfLines={1}>
-              {/* FIXME: fix width with long text   */}
               {status}
             </Text>
           </HStack>
@@ -226,7 +225,7 @@ const styles = StyleSheet.create({
   headerColumnText: {
     fontSize: 17,
     lineHeight: 22,
-    fontWeight: '700',
+    fontFamily: 'SourceSansPro-SemiBold',
     color: '#233B53',
   },
   columnText: {

@@ -99,12 +99,11 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     alignItems: 'center',
-    marginHorizontal: 48,
+    marginHorizontal: 52,
     marginTop: 32,
   },
   title: {
-    fontFamily: 'NotoSans',
-    fontWeight: '500',
+    fontFamily: 'NotoSans-Medium',
   },
 });
 

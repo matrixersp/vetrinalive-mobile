@@ -30,13 +30,14 @@ import TrustpilotIcon from 'assets/icons/trustpilot.svg';
 import ArrowRightIcon from 'assets/icons/arrow-right.svg';
 import HeadphonesIcon from 'assets/icons/headphones.svg';
 import UsersIcon from 'assets/icons/users.svg';
+import {B} from 'components/BoldText';
 
 const Dashboard = ({navigation}) => {
   return (
     <Layout>
       <View variant="full" pb={16} colorScheme="background">
         <VStack bg={gradient} py={8} px={4} h="240px">
-          <Text colorScheme="white" style={styles.welcome}>
+          <Text variant="heading" colorScheme="white" style={styles.welcome}>
             Welcome {'Mario'}!
           </Text>
           <TouchableOpacity>
@@ -54,16 +55,11 @@ const Dashboard = ({navigation}) => {
             screen="Setup"
             linkText="Completa la configurazione!">
             <Center>
-              <Text
-                colorScheme="error"
-                ml={6}
-                fontSize={34}
-                lineHeight={39}
-                fontWeight={600}>
-                0%
+              <Text colorScheme="error" fontSize={34} lineHeight={39}>
+                <B>0%</B>
               </Text>
-              <Text colorScheme="error" ml={6} fontWeight={600}>
-                completato
+              <Text colorScheme="error">
+                <B>completato</B>
               </Text>
             </Center>
             <Center>
@@ -88,8 +84,8 @@ const Dashboard = ({navigation}) => {
               />
             }>
             <Center>
-              <Text ml={6} fontSize={34} lineHeight={39} fontWeight={600}>
-                0
+              <Text ml={6} fontSize={34} lineHeight={39}>
+                <B>0</B>
               </Text>
             </Center>
           </Card>
@@ -112,16 +108,16 @@ const Dashboard = ({navigation}) => {
                 <Text fontSize={20} colorScheme="textSecondary">
                   Orders received:
                 </Text>
-                <Text fontSize={20} fontWeight={600}>
-                  0
+                <Text fontSize={20}>
+                  <B>0</B>
                 </Text>
               </HStack>
               <HStack justifyContent="space-between">
                 <Text fontSize={20} colorScheme="textSecondary">
                   Earnings:
                 </Text>
-                <Text fontSize={20} fontWeight={600}>
-                  € 0,00
+                <Text fontSize={20}>
+                  <B>€ 0,00</B>
                 </Text>
               </HStack>
             </VStack>
@@ -157,10 +153,13 @@ const Dashboard = ({navigation}) => {
                     colorScheme="white"
                     fontSize={36}
                     lineHeight={42}
-                    fontWeight={500}>
+                    fontFamily="NotoSans-Medium">
                     +50
                   </Text>
-                  <Text colorScheme="white" fontSize={22} fontWeight={500}>
+                  <Text
+                    colorScheme="white"
+                    fontSize={22}
+                    fontFamily="NotoSans-Medium">
                     Prodotti
                   </Text>
                 </Extension>
@@ -173,11 +172,13 @@ const Dashboard = ({navigation}) => {
               <Icon as={CapterraIcon} />
               <Text colorScheme="white">
                 Write a{' '}
-                <Text color="secondary" fontWeight={700}>
+                <Text color="secondary" fontFamily="SourceSansPro-Bold">
                   positive
                 </Text>{' '}
                 review on Capterra and receive the extension with{' '}
-                <Text fontWeight={700}>50 additional products.</Text>
+                <Text fontFamily="SourceSansPro-Bold">
+                  50 additional products.
+                </Text>
               </Text>
               <TouchableOpacity onPress={() => navigation.navigate('Capterra')}>
                 <HStack>
@@ -193,11 +194,13 @@ const Dashboard = ({navigation}) => {
               <Icon as={TrustpilotIcon} />
               <Text colorScheme="white">
                 Show us your love by leaving a{' '}
-                <Text color="secondary" fontWeight={700}>
+                <Text color="secondary" fontFamily="SourceSansPro-Bold">
                   positive
                 </Text>{' '}
                 review on trust pilot and receive the extension of{' '}
-                <Text fontWeight={700}>50 additional products.</Text>
+                <Text fontFamily="SourceSansPro-Bold">
+                  50 additional products.
+                </Text>
               </Text>
               <TouchableOpacity onPress={() => navigation.navigate('Capterra')}>
                 <HStack>
@@ -236,7 +239,7 @@ const Dashboard = ({navigation}) => {
             screen="invite"
             linkText="Start inviting friends!">
             <Text>
-              <Text color="secondary" fontWeight={700}>
+              <Text color="secondary" fontFamily="SourceSansPro-Bold">
                 Receive 50 products
               </Text>{' '}
               by inviting a friend who subscribes to a plan. Your friend will
@@ -261,7 +264,6 @@ const styles = StyleSheet.create({
   welcome: {
     fontSize: 34,
     lineHeight: 39,
-    fontFamily: 'SourceSansPro-SemiBold',
     marginBottom: 16,
   },
   cards: {

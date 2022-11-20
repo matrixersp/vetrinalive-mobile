@@ -4,6 +4,7 @@ import {
   DrawerContentScrollView,
   DrawerItemList,
   DrawerItem,
+  DrawerContentComponentProps,
 } from '@react-navigation/drawer';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Dashboard from 'screens/Dashboard';
@@ -98,7 +99,7 @@ const DrawerNavigation = ({}: Props) => {
   );
 };
 
-function CustomDrawerContent(props) {
+function CustomDrawerContent(props: DrawerContentComponentProps) {
   const {navigation} = props;
 
   return (

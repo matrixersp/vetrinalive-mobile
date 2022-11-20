@@ -93,8 +93,7 @@ const styles = StyleSheet.create({
     marginTop: 32,
   },
   title: {
-    fontFamily: 'NotoSans',
-    fontWeight: '500',
+    fontFamily: 'NotoSans-Medium',
   },
 });
 

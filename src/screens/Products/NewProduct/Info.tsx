@@ -10,6 +10,7 @@ import CurrencyIcon from 'assets/icons/currency.svg';
 import WeightIcon from 'assets/icons/weight.svg';
 import AvailabilityIcon from 'assets/icons/availability.svg';
 import InfoIcon from 'assets/icons/info.svg';
+import Card from 'screens/Products/NewProduct/Card';
 
 const Info = () => {
   const richText = React.useRef<RichEditor>(null);
@@ -17,17 +18,7 @@ const Info = () => {
   return (
     <ScrollView>
       <VStack space={6} py={6} px={4}>
-        <VStack
-          bg="white"
-          shadow={3}
-          borderRadius={10}
-          p={6}
-          space={6}
-          width="full">
-          <Text fontSize={20} fontWeight={600}>
-            General Information
-          </Text>
-
+        <Card title="Product Information">
           <VStack space={4}>
             <Text colorScheme="textSecondary" style={styles.inputLabel}>
               Product name
@@ -62,18 +53,8 @@ const Info = () => {
               />
             </VStack>
           </VStack>
-        </VStack>
-        <VStack
-          bg="white"
-          shadow={3}
-          borderRadius={10}
-          p={6}
-          space={6}
-          width="full">
-          <Text fontSize={20} fontWeight={600}>
-            Price
-          </Text>
-
+        </Card>
+        <Card title="Price">
           <VStack space={4}>
             <Text colorScheme="textSecondary" style={styles.inputLabel}>
               Original price
@@ -104,18 +85,8 @@ const Info = () => {
               <Text fontSize={16}>Activate discounted price</Text>
             </Checkbox>
           </VStack>
-        </VStack>
-        <VStack
-          bg="white"
-          shadow={3}
-          borderRadius={10}
-          p={6}
-          space={6}
-          width="full">
-          <Text fontSize={20} fontWeight={600}>
-            Details
-          </Text>
-
+        </Card>
+        <Card title="Details">
           <VStack space={4}>
             <Text colorScheme="textSecondary" style={styles.inputLabel}>
               Category
@@ -159,17 +130,8 @@ const Info = () => {
           <Checkbox value="discounted-price" colorScheme="blue" my={2}>
             This is a feature product
           </Checkbox>
-        </VStack>
-        <VStack
-          bg="white"
-          shadow={3}
-          borderRadius={10}
-          p={6}
-          space={6}
-          width="full">
-          <Text fontSize={20} fontWeight={600}>
-            Product type
-          </Text>
+        </Card>
+        <Card title="Product type">
           <Radio.Group
             name="exampleGroup"
             accessibilityLabel="select an option"
@@ -183,7 +145,7 @@ const Info = () => {
               </Radio>
             </HStack>
           </Radio.Group>
-        </VStack>
+        </Card>
       </VStack>
     </ScrollView>
   );

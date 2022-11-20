@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import {HStack, VStack, Image, Text} from 'native-base';
+import {B} from 'components/BoldText';
 
 const NewsCard = () => {
   return (
@@ -15,11 +16,11 @@ const NewsCard = () => {
         <Text colorScheme="primary" style={styles.title}>
           E-commerce tips
         </Text>
-        <Text fontSize={16} fontWeight={600}>
-          13 tips on How to Write a Business Plan with success
+        <Text fontSize={16} noOfLines={2}>
+          <B>13 tips on How to Write a Business Plan with success</B>
         </Text>
         <TouchableOpacity>
-          <Text style={styles.linkText}>Visita il nostro Blog</Text>
+          <Text style={styles.linkText}>Stima lettura: 5 min</Text>
         </TouchableOpacity>
       </VStack>
     </HStack>

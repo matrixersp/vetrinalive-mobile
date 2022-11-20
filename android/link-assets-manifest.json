@@ -2,6 +2,14 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/fonts/NotoSans-Medium.ttf",
+      "sha1": "24d2fbcedc876231b51ea8c096f21883d27ece5a"
+    },
+    {
+      "path": "src/assets/fonts/NotoSans.ttf",
+      "sha1": "6af0b309f2f2af25bfd0f901ed24bd0527c2cbf4"
+    },
+    {
       "path": "src/assets/fonts/SourceSansPro-Bold.ttf",
       "sha1": "167ac25366e252f07c090a8113910337f3d5255b"
     },
