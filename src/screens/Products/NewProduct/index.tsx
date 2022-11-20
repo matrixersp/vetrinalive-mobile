@@ -2,7 +2,7 @@ import {Button, ChevronLeftIcon, Text, View, VStack} from 'native-base';
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import Layout from 'components/Layout';
-import Tabs from 'screens/Products/Tabs';
+import Tabs from 'screens/Products/NewProduct/Tabs';
 
 type Props = {};
 
@@ -10,7 +10,7 @@ const NewProduct = ({navigation}: Props) => {
   return (
     <Layout>
       <View variant="full" bg="background">
-        <VStack alignItems="flex-start" space={6} m={4}>
+        <VStack alignItems="flex-start" space={6} m={4} flexGrow={0}>
           <Button
             variant="outlined"
             height="40px"

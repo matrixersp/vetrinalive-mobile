@@ -1,14 +1,9 @@
 import React from 'react';
 import {HStack, VStack, Icon, Text, Button} from 'native-base';
 import {StyleSheet} from 'react-native';
+import {CardProps} from 'screens/Payment/types';
 
-type Props = {
-  name: string;
-  icon: React.ReactNode;
-  status: 'enabled' | 'disabled' | 'coming soon';
-};
-
-const Card = ({name, icon, status}: Props) => {
+const Card = ({name, icon, status}: CardProps) => {
   const backgroundColor =
     status === 'enabled'
       ? '#E0FFF6'

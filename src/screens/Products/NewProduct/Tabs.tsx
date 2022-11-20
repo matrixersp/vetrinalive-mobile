@@ -1,8 +1,8 @@
-import {Text, View, Pressable, VStack} from 'native-base';
+import {Text, View, Pressable} from 'native-base';
 import React from 'react';
 import {useWindowDimensions, StyleSheet} from 'react-native';
 import {TabView, SceneMap} from 'react-native-tab-view';
-import InfoRoute from 'screens/Products/Info';
+import InfoRoute from 'screens/Products/NewProduct/Info';
 
 const VariantsRoute = () => <View />;
 
@@ -49,11 +49,15 @@ export default function Tabs() {
       onIndexChange={setIndex}
       initialLayout={{width: layout.width}}
       renderTabBar={renderTabBar}
+      sceneContainerStyle={styles.sceneContainer}
     />
   );
 }
 
 const styles = StyleSheet.create({
+  sceneContainer: {
+    flexGrow: 1,
+  },
   tabBar: {
     flexDirection: 'row',
     marginHorizontal: 16,

@@ -4,7 +4,7 @@ import {StyleSheet} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {actions, RichEditor, RichToolbar} from 'react-native-pell-rich-editor';
 
-import CustomSelect from 'screens/Products/Select';
+import CustomSelect from 'screens/Products/NewProduct/Select';
 
 import CurrencyIcon from 'assets/icons/currency.svg';
 import WeightIcon from 'assets/icons/weight.svg';
