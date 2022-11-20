@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   headerColumnText: {
     fontSize: 17,
     lineHeight: 22,
-    fontWeight: '700',
+    fontFamily: 'SourceSansPro-SemiBold',
     color: '#233B53',
   },
   columnText: {

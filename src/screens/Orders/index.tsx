@@ -5,6 +5,7 @@ import Layout from 'components/Layout';
 
 import ExternalLinkIcon from 'assets/icons/external-link.svg';
 import OrdersTable from 'screens/Orders/OrdersTable';
+import {B} from 'components/BoldText';
 
 const Orders = ({navigation}) => {
   return (
@@ -13,7 +14,7 @@ const Orders = ({navigation}) => {
         <HStack justifyContent="space-between" alignItems="center">
           <VStack space={4} alignItems="flex-start">
             <Text style={styles.text}>
-              Orders: <Text fontWeight={600}>24</Text>
+              Orders: <B>24</B>
             </Text>
           </VStack>
           <VStack justifyContent="center">

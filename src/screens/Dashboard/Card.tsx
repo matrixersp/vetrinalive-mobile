@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     lineHeight: 27,
-    fontWeight: '600',
+    fontFamily: 'SourceSansPro-SemiBold',
   },
   linkText: {
     textDecorationLine: 'underline',

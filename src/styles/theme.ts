@@ -25,6 +25,9 @@ export const customTheme = extendTheme({
       },
     },
     Text: {
+      baseStyle: {
+        fontFamily: 'SourceSansPro',
+      },
       defaultProps: {
         variant: 'body',
       },
@@ -33,6 +36,7 @@ export const customTheme = extendTheme({
           fontSize: 28,
           lineHeight: 32,
           color: colorScheme || 'textPrimary',
+          fontFamily: 'SourceSansPro-SemiBold',
         }),
         body: ({colorScheme}: any) => ({
           fontSize: 18,
@@ -48,7 +52,7 @@ export const customTheme = extendTheme({
         paddingHorizontal: 20,
         backgroundColor: 'white',
         _text: {
-          fontWeight: 600,
+          fontFamily: 'SourceSansPro-SemiBold',
           margin: 0,
           padding: 0,
         },

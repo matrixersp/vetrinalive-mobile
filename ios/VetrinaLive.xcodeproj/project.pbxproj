@@ -17,6 +17,8 @@
 		BF272A9442D14D81858562FB /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB1B24E9ED9B4B28856F24E9 /* SourceSansPro-Bold.ttf */; };
 		62CA88EF02A14CEAB4DFAA6D /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8EE3662DE504D3D8205A278 /* SourceSansPro-SemiBold.ttf */; };
 		C540E5741F35450F92D8EB19 /* SourceSansPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F6ACB39281B4EE8B0B96ACC /* SourceSansPro.ttf */; };
+		A3CE14B0013A46B490F76EF6 /* NotoSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B9FE191290374B7885E70862 /* NotoSans-Medium.ttf */; };
+		48361352A35747F08452A0B4 /* NotoSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF9E9BAB0EDF48F28DD151FF /* NotoSans.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		FB1B24E9ED9B4B28856F24E9 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; name = "SourceSansPro-Bold.ttf"; path = "../src/assets/fonts/SourceSansPro-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		C8EE3662DE504D3D8205A278 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; name = "SourceSansPro-SemiBold.ttf"; path = "../src/assets/fonts/SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		4F6ACB39281B4EE8B0B96ACC /* SourceSansPro.ttf */ = {isa = PBXFileReference; name = "SourceSansPro.ttf"; path = "../src/assets/fonts/SourceSansPro.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B9FE191290374B7885E70862 /* NotoSans-Medium.ttf */ = {isa = PBXFileReference; name = "NotoSans-Medium.ttf"; path = "../src/assets/fonts/NotoSans-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DF9E9BAB0EDF48F28DD151FF /* NotoSans.ttf */ = {isa = PBXFileReference; name = "NotoSans.ttf"; path = "../src/assets/fonts/NotoSans.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,8 @@
 				FB1B24E9ED9B4B28856F24E9 /* SourceSansPro-Bold.ttf */,
 				C8EE3662DE504D3D8205A278 /* SourceSansPro-SemiBold.ttf */,
 				4F6ACB39281B4EE8B0B96ACC /* SourceSansPro.ttf */,
+				B9FE191290374B7885E70862 /* NotoSans-Medium.ttf */,
+				DF9E9BAB0EDF48F28DD151FF /* NotoSans.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -265,6 +271,8 @@
 				BF272A9442D14D81858562FB /* SourceSansPro-Bold.ttf in Resources */,
 				62CA88EF02A14CEAB4DFAA6D /* SourceSansPro-SemiBold.ttf in Resources */,
 				C540E5741F35450F92D8EB19 /* SourceSansPro.ttf in Resources */,
+				A3CE14B0013A46B490F76EF6 /* NotoSans-Medium.ttf in Resources */,
+				48361352A35747F08452A0B4 /* NotoSans.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
