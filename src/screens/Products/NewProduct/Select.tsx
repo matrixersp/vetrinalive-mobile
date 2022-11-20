@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Select, CheckIcon, HStack} from 'native-base';
+import {Select, CheckIcon} from 'native-base';
 
 type Props = {
   options: Record<string, any>[];

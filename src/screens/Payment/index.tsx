@@ -11,6 +11,7 @@ import PaypalIcon from 'assets/icons/paypal.svg';
 import RazorpayIcon from 'assets/icons/razorpay.svg';
 import AliPayIcon from 'assets/icons/alipay.svg';
 import PaystackIcon from 'assets/icons/paystack.svg';
+import {CardProps} from 'screens/Payment/types';
 
 const Payment = () => {
   return (
@@ -29,7 +30,7 @@ const Payment = () => {
   );
 };
 
-const cards = [
+const cards: CardProps[] = [
   {
     name: 'Cash',
     icon: CashIcon,
