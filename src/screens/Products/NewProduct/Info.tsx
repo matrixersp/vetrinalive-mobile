@@ -9,7 +9,7 @@ import CustomSelect from 'screens/Products/NewProduct/Select';
 import CurrencyIcon from 'assets/icons/currency.svg';
 import WeightIcon from 'assets/icons/weight.svg';
 import AvailabilityIcon from 'assets/icons/availability.svg';
-import InfoIcon from 'assets/icons/info.svg';
+import InfoIcon from 'assets/icons/info-small.svg';
 import Card from 'screens/Products/NewProduct/Card';
 
 const Info = () => {

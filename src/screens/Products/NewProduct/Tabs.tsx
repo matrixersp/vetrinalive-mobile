@@ -71,6 +71,6 @@ const styles = StyleSheet.create({
   tabItemText: {
     lineHeight: 16,
     fontSize: 12,
-    fontWeight: '600',
+    fontFamily: 'SourceSansPro-SemiBold',
   },
 });

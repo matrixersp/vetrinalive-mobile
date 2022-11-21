@@ -3,13 +3,16 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import Layout from 'components/Layout';
 import Tabs from 'screens/Products/NewProduct/Tabs';
+import {useFullHeight} from 'utils';
 
 type Props = {};
 
 const NewProduct = ({navigation}: Props) => {
+  const minHeight = useFullHeight();
+
   return (
     <Layout>
-      <View variant="full" bg="background">
+      <View bg="background" minH={minHeight}>
         <VStack alignItems="flex-start" space={6} m={4} flexGrow={0}>
           <Button
             variant="outlined"
