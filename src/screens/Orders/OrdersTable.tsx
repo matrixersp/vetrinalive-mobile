@@ -6,9 +6,11 @@ import {
   Pressable,
   Icon,
   Text,
+  Center,
 } from 'native-base';
-import React from 'react';
+import React, {useMemo} from 'react';
 import {StyleSheet} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import Menu from 'screens/Orders/Menu';
 
@@ -17,6 +19,7 @@ import ChevronLeftIcon from 'assets/icons/chevron-left.svg';
 import ChevronRightIcon from 'assets/icons/chevron-right.svg';
 import ChevronDownIcon from 'assets/icons/chevron-down-small.svg';
 import ChevronUpIcon from 'assets/icons/chevron-up-small.svg';
+import {OrdersNavigationProps} from 'navigation/DrawerNavigation';
 
 const width = {
   number: '23%',
@@ -24,7 +27,47 @@ const width = {
   status: '24%',
 };
 
+type Option = string | number;
+
 const OrdersTable = () => {
+  const navigation = useNavigation<OrdersNavigationProps>();
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const totalPages = useMemo(
+    () => Math.ceil(orders.length / rowsPerPage),
+    [rowsPerPage],
+  );
+
+  const handleMoreActions = (id: number) => (option: Option) => {
+    switch (option) {
+      case 'View':
+        navigation.navigate('OrderDetails', {id});
+        break;
+      case 'Delete':
+        console.log('Delete');
+        break;
+      default:
+        console.log('default');
+    }
+  };
+
+  const handleRowsPerPage = (option: Option) => {
+    setRowsPerPage(option as number);
+  };
+
+  const handlePageChange = (direction: 'next' | 'prev') => {
+    if (direction === 'next' && page < totalPages - 1) {
+      setPage(page + 1);
+    } else if (direction === 'prev' && page > 0) {
+      setPage(page - 1);
+    }
+  };
+
+  const handleOrderPressed = (id: number) => () => {
+    navigation.navigate('OrderDetails', {id});
+  };
+
   return (
     <VStack divider={<Divider />} shadow={3} style={styles.tableContainer}>
       <HStack divider={<Divider />} alignItems="center">
@@ -69,55 +112,68 @@ const OrdersTable = () => {
         </HStack>
         <HStack minW={12} style={styles.cell} />
       </HStack>
-      {rows.map(({number, name, status}, index) => (
-        <HStack divider={<Divider />} alignItems="center" key={index}>
-          <HStack style={styles.cell} w={width.number}>
-            <Checkbox
-              value={String(number)}
-              defaultIsChecked={false}
-              colorScheme="blue"
-              accessibilityLabel="number"
-            />
-            <Text style={styles.columnText} ml={2} numberOfLines={1}>
-              {number}
-            </Text>
-          </HStack>
-          <HStack style={styles.cell} w={width.name}>
-            <Text style={styles.columnText} numberOfLines={2}>
-              {name}
-            </Text>
-          </HStack>
-          <HStack style={styles.cell} w={width.status}>
-            <Text
-              style={[
-                styles.columnText,
-                styles.status,
-                {backgroundColor: getStatusBackground(status)},
-              ]}
-              noOfLines={1}>
-              {status}
-            </Text>
-          </HStack>
-          <HStack style={styles.cell}>
-            <Pressable>
-              <Icon as={MoreHorizontalIcon} />
-            </Pressable>
-          </HStack>
-        </HStack>
-      ))}
+      {orders
+        .slice(rowsPerPage * page, page * rowsPerPage + rowsPerPage)
+        .map(({id, number, name, status}) => (
+          <Pressable key={id} onPress={handleOrderPressed(id)}>
+            <HStack divider={<Divider />} alignItems="center">
+              <HStack style={styles.cell} w={width.number}>
+                <Checkbox
+                  value={String(number)}
+                  defaultIsChecked={false}
+                  colorScheme="blue"
+                  accessibilityLabel="number"
+                />
+                <Text style={styles.columnText} ml={2} numberOfLines={1}>
+                  {number}
+                </Text>
+              </HStack>
+              <HStack style={styles.cell} w={width.name}>
+                <Text style={styles.columnText} numberOfLines={2}>
+                  {name}
+                </Text>
+              </HStack>
+              <HStack style={styles.cell} w={width.status}>
+                <Text
+                  style={[
+                    styles.columnText,
+                    styles.status,
+                    {backgroundColor: getStatusBackground(status)},
+                  ]}
+                  noOfLines={1}>
+                  {status}
+                </Text>
+              </HStack>
+              <HStack style={styles.cell}>
+                <Menu
+                  options={['View', 'Delete']}
+                  icon={<Icon as={MoreHorizontalIcon} />}
+                  onItemPress={handleMoreActions(id)}
+                />
+              </HStack>
+            </HStack>
+          </Pressable>
+        ))}
       <HStack px={8} py={4} justifyContent="space-between">
         <HStack space={2} alignItems="center">
           <Text style={styles.paginationText}>P</Text>
-          <Menu options={[5, 10, 25]} />
+          <Menu
+            options={[5, 10, 25]}
+            selectedOption={rowsPerPage}
+            icon={<Icon as={ChevronDownIcon} />}
+            onItemPress={handleRowsPerPage}
+          />
         </HStack>
         <HStack alignItems="center">
-          <Text style={styles.paginationText}>1-25 of 25</Text>
+          <Text style={styles.paginationText}>
+            {page + 1}-{totalPages} of {totalPages}
+          </Text>
         </HStack>
         <HStack alignItems="center" space={2}>
-          <Pressable>
+          <Pressable onPress={() => handlePageChange('prev')}>
             <Icon as={ChevronLeftIcon} />
           </Pressable>
-          <Pressable>
+          <Pressable onPress={() => handlePageChange('next')}>
             <Icon as={ChevronRightIcon} />
           </Pressable>
         </HStack>
@@ -143,73 +199,87 @@ const getStatusBackground = (status: string) => {
   }
 };
 
-const rows = [
+const orders = [
   {
+    id: 1,
     number: 2222,
     name: 'Cameron Williamson',
     status: 'New',
   },
   {
+    id: 2,
     number: 2222,
     name: 'Cameron Williamson',
     status: 'New',
   },
   {
+    id: 3,
     number: 2222,
     name: 'Cameron Williamson',
     status: 'Shipped',
   },
   {
+    id: 4,
     number: 2222,
     name: 'Cameron Williamson',
     status: 'In progress',
   },
   {
+    id: 5,
     number: 2222,
     name: 'Cameron Williamson',
     status: 'Reso effettuato',
   },
   {
+    id: 6,
     number: 2222,
     name: 'Cameron Williamson',
     status: 'New',
   },
   {
+    id: 7,
     number: 2222,
     name: 'Cameron Williamson',
     status: 'Shipped',
   },
   {
+    id: 8,
     number: 2222,
     name: 'Cameron Williamson',
     status: 'New',
   },
   {
+    id: 9,
     number: 2222,
     name: 'Cameron Williamson',
     status: 'In progress',
   },
   {
+    id: 10,
     number: 2222,
     name: 'Cameron Williamson',
     status: 'Cancelled',
   },
   {
+    id: 11,
     number: 2222,
     name: 'Cameron Williamson',
     status: 'New',
   },
   {
+    id: 12,
     number: 2222,
     name: 'Cameron Williamson',
     status: 'New',
   },
   {
+    id: 13,
     number: 2222,
     name: 'Cameron Williamson',
     status: 'Shipped',
   },
   {
+    id: 14,
     number: 2222,
     name: 'Cameron Williamson',
     status: 'In progress',

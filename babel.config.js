@@ -12,6 +12,7 @@ module.exports = {
           navigation: 'src/navigation',
           styles: 'src/styles',
           assets: 'src/assets',
+          utils: 'src/utils',
         },
       },
     ],

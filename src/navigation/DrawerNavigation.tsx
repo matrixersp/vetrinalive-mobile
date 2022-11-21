@@ -5,8 +5,12 @@ import {
   DrawerItemList,
   DrawerItem,
   DrawerContentComponentProps,
+  DrawerScreenProps,
 } from '@react-navigation/drawer';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {
+  createNativeStackNavigator,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack';
 import Dashboard from 'screens/Dashboard';
 import Products from 'screens/Products';
 import {HeaderTitle} from 'components/HeaderTitle';
@@ -19,13 +23,22 @@ import FilterIcon from 'assets/icons/filter.svg';
 import NewProduct from 'screens/Products/NewProduct';
 import Payment from 'screens/Payment';
 import Orders from 'screens/Orders';
+import OrderDetails from 'screens/Orders/OrderDetails';
 
-const Drawer = createDrawerNavigator();
+const Drawer = createDrawerNavigator<DrawerParamList>();
 const Stack = createNativeStackNavigator();
 
-type Props = {};
+export type DrawerParamList = {
+  Dashboard: undefined;
+  Products: undefined;
+  Orders: undefined;
+  Payment: undefined;
+};
 
-const DrawerNavigation = ({}: Props) => {
+export type DrawerProps = DrawerScreenProps<DrawerParamList, 'Dashboard'>;
+export type DrawerNavigationProps = DrawerProps['navigation'];
+
+const DrawerNavigation = () => {
   return (
     <Drawer.Navigator
       initialRouteName="Dashboard"
@@ -80,20 +93,8 @@ const DrawerNavigation = ({}: Props) => {
       />
       <Drawer.Screen
         name="Orders"
-        component={Orders}
-        options={{
-          headerTitle: () => <HeaderTitle title="Orders" />,
-          headerRight: () => (
-            <HStack mr={4} space={8}>
-              <Pressable onPress={() => console.log('Search')}>
-                <SearchIcon />
-              </Pressable>
-              <Pressable onPress={() => console.log('filter')}>
-                <FilterIcon />
-              </Pressable>
-            </HStack>
-          ),
-        }}
+        component={OrdersNavigation}
+        options={{headerShown: false}}
       />
     </Drawer.Navigator>
   );
@@ -121,6 +122,52 @@ const ProductsNavigation = () => {
       initialRouteName="AllProducts">
       <Stack.Screen name="AllProducts" component={Products} />
       <Stack.Screen name="NewProduct" component={NewProduct} />
+    </Stack.Navigator>
+  );
+};
+
+type OrdersParamList = {
+  AllOrders: undefined;
+  OrderDetails: {id: number};
+};
+
+export type OrdersProps = NativeStackScreenProps<
+  OrdersParamList,
+  'OrderDetails'
+>;
+export type OrdersNavigationProps = OrdersProps['navigation'];
+export type OrderDetailsRouteProps = OrdersProps['route'];
+
+const OrdersNavigation = ({navigation}) => {
+  return (
+    <Stack.Navigator initialRouteName="AllOrders">
+      <Stack.Screen
+        name="AllOrders"
+        component={Orders}
+        options={{
+          headerTitle: () => <HeaderTitle title="Orders" />,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.openDrawer()}>
+              <Icon as={MenuIcon} marginRight={4} />
+            </TouchableOpacity>
+          ),
+          headerRight: () => (
+            <HStack mr={4} space={8}>
+              <Pressable onPress={() => console.log('Search')}>
+                <SearchIcon />
+              </Pressable>
+              <Pressable onPress={() => console.log('filter')}>
+                <FilterIcon />
+              </Pressable>
+            </HStack>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="OrderDetails"
+        component={OrderDetails}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };

@@ -21,7 +21,7 @@ const Orders = ({navigation}) => {
             <Button
               variant="contained"
               isDisabled
-              onPress={() => navigation.navigate('NewProduct')}
+              onPress={() => navigation.navigate('AllOrders')}
               endIcon={<Icon as={ExternalLinkIcon} color="disabled" />}>
               Ship order
             </Button>
