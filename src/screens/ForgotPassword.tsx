@@ -34,7 +34,7 @@ const ForgotPassword = ({navigation}) => {
         </VStack>
         <VStack mx={4} mt={6} space={4}>
           <Input placeholder="Email" keyboardType="email-address" />
-          <Button variant="contained" shadow={2} mt={2}>
+          <Button variant="contained" shadow={2} mt={2} size="lg">
             Login
           </Button>
         </VStack>
@@ -57,6 +57,7 @@ const ForgotPassword = ({navigation}) => {
             colorScheme="secondary"
             rounded="full"
             px={6}
+            size="lg"
             shadow={2}
             _icon={{marginRight: 1}}
             leftIcon={<Icon as={HeadphonesIcon} size="1" />}>

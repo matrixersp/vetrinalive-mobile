@@ -39,7 +39,7 @@ const SignUp = ({navigation}) => {
           <Input placeholder="Name and Surname" />
           <Input placeholder="Email" keyboardType="email-address" />
           <Input placeholder="Password" secureTextEntry />
-          <Button variant="contained" shadow={2} mt={2}>
+          <Button variant="contained" shadow={2} mt={2} size="lg">
             Create your shop
           </Button>
           <CustomDivider text="OR" mt={2} mx={3} />
@@ -71,6 +71,7 @@ const SignUp = ({navigation}) => {
             colorScheme="secondary"
             rounded="full"
             px={6}
+            size="lg"
             shadow={2}
             _icon={{marginRight: 1}}
             leftIcon={<Icon as={HeadphonesIcon} size="1" />}>
