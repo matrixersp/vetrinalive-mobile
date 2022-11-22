@@ -24,6 +24,7 @@ import NewProduct from 'screens/Products/NewProduct';
 import Payment from 'screens/Payment';
 import Orders from 'screens/Orders';
 import OrderDetails from 'screens/Orders/OrderDetails';
+import Subscription from 'screens/Subscription';
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 const Stack = createNativeStackNavigator();
@@ -33,6 +34,7 @@ export type DrawerParamList = {
   Products: undefined;
   Orders: undefined;
   Payment: undefined;
+  Subscription: undefined;
 };
 
 export type DrawerProps = DrawerScreenProps<DrawerParamList, 'Dashboard'>;
@@ -95,6 +97,13 @@ const DrawerNavigation = () => {
         name="Orders"
         component={OrdersNavigation}
         options={{headerShown: false}}
+      />
+      <Drawer.Screen
+        name="Subscription"
+        component={Subscription}
+        options={{
+          headerTitle: () => <HeaderTitle title="Subscription" />,
+        }}
       />
     </Drawer.Navigator>
   );

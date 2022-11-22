@@ -47,7 +47,6 @@ export const customTheme = extendTheme({
     },
     Button: {
       baseStyle: {
-        height: 50,
         borderRadius: 5,
         paddingHorizontal: 20,
         backgroundColor: 'white',
@@ -95,9 +94,21 @@ export const customTheme = extendTheme({
         }),
       },
       sizes: {
+        lg: {
+          height: 50,
+        },
         md: {
           _text: {
             fontSize: 14,
+          },
+        },
+        xs: {
+          style: {
+            height: 'auto',
+          },
+          _text: {
+            fontSize: 12,
+            lineHeight: 16,
           },
         },
       },

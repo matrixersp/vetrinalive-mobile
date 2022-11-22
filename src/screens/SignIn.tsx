@@ -41,6 +41,7 @@ const SignIn = ({navigation}) => {
             variant="contained"
             shadow={2}
             mt={2}
+            size="lg"
             onPress={() => navigation.navigate('Home')}>
             Login
           </Button>
@@ -81,6 +82,7 @@ const SignIn = ({navigation}) => {
             colorScheme="secondary"
             rounded="full"
             px={6}
+            size="lg"
             shadow={2}
             _icon={{marginRight: 1}}
             leftIcon={<Icon as={HeadphonesIcon} size="1" />}>
