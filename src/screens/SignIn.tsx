@@ -1,15 +1,6 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
-import {
-  View,
-  Center,
-  HStack,
-  Button,
-  VStack,
-  Icon,
-  Input,
-  Text,
-} from 'native-base';
+import {View, Center, HStack, Button, VStack, Icon, Text} from 'native-base';
 
 import CustomDivider from 'components/Divider';
 import Layout from 'components/Layout';
@@ -23,24 +14,20 @@ import {CustomInput} from 'components/fields';
 import {FormikHelpers, Formik, Field} from 'formik';
 import * as Yup from 'yup';
 import {useAuth} from 'contexts/AuthContext';
+import {SignInValues} from 'utils/authService';
 
 const SignupSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
   password: Yup.string().required('Required'),
 });
 
-type FormValues = {
-  email: string;
-  password: string;
-};
-
 const SignIn = ({navigation}) => {
   const {signIn} = useAuth();
   const [error, setError] = React.useState('');
 
-  const handleSignUp = (
-    values: FormValues,
-    actions: FormikHelpers<FormValues>,
+  const handleSignIn = (
+    values: SignInValues,
+    actions: FormikHelpers<SignInValues>,
   ) => {
     signIn(values)
       .then(_ => {
@@ -78,8 +65,8 @@ const SignIn = ({navigation}) => {
           </Center>
         )}
         <Formik
-          initialValues={{fullName: '', email: '', password: ''}}
-          onSubmit={handleSignUp}
+          initialValues={{email: '', password: ''}}
+          onSubmit={handleSignIn}
           validationSchema={SignupSchema}>
           {({handleSubmit, isSubmitting}) => (
             <VStack mx={4} mt={6} space={4}>

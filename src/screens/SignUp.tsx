@@ -14,6 +14,7 @@ import HeadphonesIcon from 'assets/icons/headphones.svg';
 import {CustomInput} from 'components/fields';
 import axios from 'axios';
 import {useAuth} from 'contexts/AuthContext';
+import {SignUpValues} from 'utils/authService';
 
 const SignupSchema = Yup.object().shape({
   fullName: Yup.string()
@@ -24,19 +25,13 @@ const SignupSchema = Yup.object().shape({
   password: Yup.string().min(6, 'Too Short!').required('Required'),
 });
 
-type FormValues = {
-  fullName: string;
-  email: string;
-  password: string;
-};
-
 const SignUp = ({navigation}) => {
   const {signUp} = useAuth();
   const [error, setError] = React.useState('');
 
   const handleSignUp = (
-    values: FormValues,
-    actions: FormikHelpers<FormValues>,
+    values: SignUpValues,
+    actions: FormikHelpers<SignUpValues>,
   ) => {
     signUp(values)
       .then(_ => {
