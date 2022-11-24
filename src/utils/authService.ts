@@ -40,7 +40,6 @@ export const authService = {
     });
   },
   signOut: async () => {
-    console.log('signOut');
     return await AsyncStorage.clear();
   },
 };
