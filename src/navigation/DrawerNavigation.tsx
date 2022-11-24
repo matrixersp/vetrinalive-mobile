@@ -20,6 +20,13 @@ import {Divider, HStack, Icon, Pressable} from 'native-base';
 import MenuIcon from 'assets/icons/menu.svg';
 import SearchIcon from 'assets/icons/search.svg';
 import FilterIcon from 'assets/icons/filter.svg';
+import DashboardIcon from 'assets/icons/dashboard.svg';
+import ProductsIcon from 'assets/icons/products.svg';
+import PaymentIcon from 'assets/icons/payment.svg';
+import OrdersIcon from 'assets/icons/orders.svg';
+import SubscriptionIcon from 'assets/icons/subscription.svg';
+import SignOutIcon from 'assets/icons/sign-out.svg';
+
 import NewProduct from 'screens/Products/NewProduct';
 import Payment from 'screens/Payment';
 import Orders from 'screens/Orders';
@@ -51,6 +58,9 @@ const DrawerNavigation = () => {
             <Icon as={MenuIcon} marginLeft={4} />
           </TouchableOpacity>
         ),
+        drawerIcon: () => {
+          return <Icon as={SignOutIcon} color="primary" />;
+        },
       })}
       drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen
@@ -58,6 +68,7 @@ const DrawerNavigation = () => {
         component={Dashboard}
         options={{
           headerTitle: () => <HeaderTitle title="Dashboard" />,
+          drawerIcon: () => <Icon as={DashboardIcon} color="primary" mr={-4} />,
         }}
       />
       <Drawer.Screen
@@ -65,6 +76,7 @@ const DrawerNavigation = () => {
         component={ProductsNavigation}
         options={{
           headerTitle: () => <HeaderTitle title="Products" />,
+          drawerIcon: () => <Icon as={ProductsIcon} color="primary" mr={-4} />,
           headerRight: () => (
             <HStack mr={4} space={8}>
               <Pressable onPress={() => console.log('Search')}>
@@ -81,7 +93,8 @@ const DrawerNavigation = () => {
         name="Payment"
         component={Payment}
         options={{
-          headerTitle: () => <HeaderTitle title="Products" />,
+          headerTitle: () => <HeaderTitle title="Payment" />,
+          drawerIcon: () => <Icon as={PaymentIcon} color="primary" mr={-4} />,
           headerRight: () => (
             <HStack mr={4} space={8}>
               <Pressable onPress={() => console.log('Search')}>
@@ -97,13 +110,19 @@ const DrawerNavigation = () => {
       <Drawer.Screen
         name="Orders"
         component={OrdersNavigation}
-        options={{headerShown: false}}
+        options={{
+          headerShown: false,
+          drawerIcon: () => <Icon as={OrdersIcon} color="primary" mr={-4} />,
+        }}
       />
       <Drawer.Screen
         name="Subscription"
         component={Subscription}
         options={{
           headerTitle: () => <HeaderTitle title="Subscription" />,
+          drawerIcon: () => (
+            <Icon as={SubscriptionIcon} color="primary" mr={-4} />
+          ),
         }}
       />
     </Drawer.Navigator>
@@ -117,7 +136,11 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
     <DrawerContentScrollView {...props}>
       <DrawerItemList {...props} />
       <Divider />
-      <DrawerItem label="Logout" onPress={signOut} />
+      <DrawerItem
+        label="Logout"
+        onPress={signOut}
+        icon={() => <Icon as={SignOutIcon} color="primary" mr={-4} />}
+      />
     </DrawerContentScrollView>
   );
 }
