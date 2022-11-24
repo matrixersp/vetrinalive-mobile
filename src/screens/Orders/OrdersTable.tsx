@@ -6,13 +6,12 @@ import {
   Pressable,
   Icon,
   Text,
-  Center,
 } from 'native-base';
 import React, {useMemo} from 'react';
 import {StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-import Menu from 'screens/Orders/Menu';
+import Menu from 'components/Menu';
 
 import MoreHorizontalIcon from 'assets/icons/more-horizontal.svg';
 import ChevronLeftIcon from 'assets/icons/chevron-left.svg';
