@@ -1,5 +1,5 @@
 import {Divider, HStack, Icon, Text, VStack} from 'native-base';
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useMemo, useState} from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 
@@ -8,7 +8,7 @@ import WhatsappIcon from 'assets/icons/whatsapp.svg';
 import TelegramIcon from 'assets/icons/telegram.svg';
 import ChevronDownIcon from 'assets/icons/chevron-down.svg';
 import {B} from 'components/BoldText';
-import Menu from 'screens/Orders/Menu';
+import Menu from 'components/Menu';
 import Actionsheet from 'screens/Orders/OrderDetails/Actionsheet';
 
 type Option = string | number;
