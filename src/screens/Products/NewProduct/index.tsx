@@ -3,7 +3,7 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import Layout from 'components/Layout';
 import Tabs from 'screens/Products/NewProduct/Tabs';
-import {useFullHeight} from 'utils';
+import {useFullHeight} from 'utils/useFullHeight';
 
 type Props = {};
 

@@ -11,7 +11,7 @@ import {TouchableOpacity} from 'react-native';
 import CloseIcon from 'assets/icons/close.svg';
 import StarFilledIcon from 'assets/icons/star-filled.svg';
 import {StyleSheet} from 'react-native';
-import {useFullHeight} from 'utils';
+import {useFullHeight} from 'utils/useFullHeight';
 import Tabs from 'screens/Orders/OrderDetails/Tabs';
 
 const OrderDetails = () => {
