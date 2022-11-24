@@ -25,6 +25,7 @@ import Payment from 'screens/Payment';
 import Orders from 'screens/Orders';
 import OrderDetails from 'screens/Orders/OrderDetails';
 import Subscription from 'screens/Subscription';
+import {useAuth} from 'contexts/AuthContext';
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 const Stack = createNativeStackNavigator();
@@ -110,16 +111,13 @@ const DrawerNavigation = () => {
 };
 
 function CustomDrawerContent(props: DrawerContentComponentProps) {
-  const {navigation} = props;
+  const {signOut} = useAuth();
 
   return (
     <DrawerContentScrollView {...props}>
       <DrawerItemList {...props} />
       <Divider />
-      <DrawerItem
-        label="Logout"
-        onPress={() => navigation.navigate('SignIn')}
-      />
+      <DrawerItem label="Logout" onPress={signOut} />
     </DrawerContentScrollView>
   );
 }

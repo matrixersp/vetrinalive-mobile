@@ -31,14 +31,17 @@ import ArrowRightIcon from 'assets/icons/arrow-right.svg';
 import HeadphonesIcon from 'assets/icons/headphones.svg';
 import UsersIcon from 'assets/icons/users.svg';
 import {B} from 'components/BoldText';
+import {useAuth} from 'contexts/AuthContext';
 
 const Dashboard = ({navigation}) => {
+  const {user} = useAuth();
+
   return (
     <Layout>
       <View variant="full" pb={16} colorScheme="background">
         <VStack bg={gradient} py={8} px={4} h="240px">
           <Text variant="heading" colorScheme="white" style={styles.welcome}>
-            Welcome {'Mario'}!
+            Welcome {user?.fullName.split(' ')[0]}!
           </Text>
           <TouchableOpacity>
             <HStack>

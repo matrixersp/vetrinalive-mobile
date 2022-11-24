@@ -4,6 +4,7 @@ import React from 'react';
 
 import {customTheme} from 'styles/theme';
 import Navigation from 'navigation';
+import {AuthProvider} from 'contexts/AuthContext';
 
 const config = {
   dependencies: {
@@ -13,9 +14,11 @@ const config = {
 
 const App = () => {
   return (
-    <NativeBaseProvider theme={customTheme} config={config}>
-      <Navigation />
-    </NativeBaseProvider>
+    <AuthProvider>
+      <NativeBaseProvider theme={customTheme} config={config}>
+        <Navigation />
+      </NativeBaseProvider>
+    </AuthProvider>
   );
 };
 
